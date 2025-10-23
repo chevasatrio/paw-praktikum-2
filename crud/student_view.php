@@ -45,6 +45,7 @@ $query = "SELECT * FROM student ORDER BY nim ASC";
         <th>Fakultas</th>
         <th>Jurusan</th>
         <th>IPK</th>
+        <th>Aksi</th>
       </tr>
       <?php
       $result = mysqli_query($connection, $query);
@@ -58,11 +59,21 @@ $query = "SELECT * FROM student ORDER BY nim ASC";
         echo "<tr>";
         echo "<td>$data[nim]</td>";
         echo "<td>$data[name]</td>";
-        echo "<td>$data[birth_city]</td>";
+        // ... data lainnya ...
         echo "<td>$formatted_date</td>";
         echo "<td>$data[faculty]</td>";
         echo "<td>$data[department]</td>";
         echo "<td>$data[gpa]</td>";
+
+        // START: Tambahkan Aksi
+        echo "<td>";
+        // Link Edit: Mengirim NIM sebagai parameter
+        echo "<a href='student_edit.php?nim=$data[nim]'>Edit</a> ";
+        // Link Hapus: Mengirim NIM dan konfirmasi
+        echo "<a href='student_delete.php?nim=$data[nim]' onclick='return confirm(\"Yakin ingin menghapus $data[name]?\")'>Hapus</a>";
+        echo "</td>";
+        // END: Tambahkan Aksi
+      
         echo "</tr>";
       }
       mysqli_free_result($result);

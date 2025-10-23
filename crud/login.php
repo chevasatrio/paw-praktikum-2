@@ -58,8 +58,7 @@ WHERE username = '$username' AND password = '$password_sha1'";
         </p>
         <p>
           <label for="password">Password : </label>
-          <input type="password" name="password" id="password"
-            value="<?php echo $username ?>">
+          <input type="password" name="password" id="password" value="<?php echo $username ?>">
         </p>
         <p>
           <input type="submit" name="submit" value="Log In">

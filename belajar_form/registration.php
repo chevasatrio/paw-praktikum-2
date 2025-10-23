@@ -41,10 +41,14 @@ if (isset($_POST["submit"])) {
     htmlentities(strip_tags(trim($_POST["student_password"])));
   $student_password_confirmation =
     htmlentities(strip_tags(trim($_POST["student_password_confirmation"])));
-  if (empty($student_name)) $error_message .= "- Nama Mahasiwa belum diisi <br>";
-  if (empty($student_number)) $error_message .= "- No Induk Mahasiswa (NIM) belum diisi <br>";
-  if (empty($student_address)) $error_message .= "- Alamat Mahasiswa belum diisi <br>";
-  if (empty($student_website)) $error_message .= "- URL Website belum diisi <br>";
+  if (empty($student_name))
+    $error_message .= "- Nama Mahasiwa belum diisi <br>";
+  if (empty($student_number))
+    $error_message .= "- No Induk Mahasiswa (NIM) belum diisi <br>";
+  if (empty($student_address))
+    $error_message .= "- Alamat Mahasiswa belum diisi <br>";
+  if (empty($student_website))
+    $error_message .= "- URL Website belum diisi <br>";
   $upload_error = $_FILES["student_photo"]["error"];
   if ($upload_error !== 0) {
     $arr_upload_error = [
@@ -73,10 +77,14 @@ if (isset($_POST["submit"])) {
       $error_message .= "- Mohon upload file gambar (gif, png, atau jpg) <br>";
     }
   }
-  if (empty($student_email)) $error_message .= "- Email belum diisi <br>";
-  if (empty($student_username)) $error_message .= "- Username belum diisi <br>";
-  if (empty($student_password)) $error_message .= "- Password belum  diisi <br>";
-  if (empty($student_password_confirmation)) $error_message .= "-
+  if (empty($student_email))
+    $error_message .= "- Email belum diisi <br>";
+  if (empty($student_username))
+    $error_message .= "- Username belum diisi <br>";
+  if (empty($student_password))
+    $error_message .= "- Password belum  diisi <br>";
+  if (empty($student_password_confirmation))
+    $error_message .= "-
 Konfirmasi Password belum diisi <br>";
   $checked_man = "";
   $checked_woman = "";
@@ -199,8 +207,7 @@ kuliah pemrograman web di program studi sistem informasi">
     if ($error_message !== "")
       echo "<div class='error'>$error_message</div>";
     ?>
-    <form action="registration.php" method="post"
-      enctype="multipart/form-data">
+    <form action="registration.php" method="post" enctype="multipart/form-data">
       <fieldset>
         <legend>Biodata</legend>
         <table>
@@ -208,29 +215,27 @@ kuliah pemrograman web di program studi sistem informasi">
             <td>Nama Mahasiswa*</td>
             <td>:</td>
             <td>
-              <input type="text" name="student_name"
-                value="<?= $student_name ?>" size="20" placeholder="Nama Anda">
+              <input type="text" name="student_name" value="<?= $student_name ?>" size="20" placeholder="Nama Anda">
             </td>
           </tr>
           <tr>
             <td>No Induk Mahasiswa (NIM)*</td>
             <td>:</td>
-            <td><input type="text" name="student_number"
-                value="<?= $student_number ?>" size="20" placeholder="NIM Anda"></td>
+            <td><input type="text" name="student_number" value="<?= $student_number ?>" size="20"
+                placeholder="NIM Anda"></td>
           </tr>
           <tr>
             <td style="vertical-align: top;">Alamat
               Mahasiswa*</td>
             <td style="vertical-align: top;">:</td>
-            <td><textarea name="student_address" cols="30"
-                rows="5" placeholder="Alamat Anda"><?= $student_address ?></textarea></td>
+            <td><textarea name="student_address" cols="30" rows="5"
+                placeholder="Alamat Anda"><?= $student_address ?></textarea></td>
           </tr>
           <tr>
             <td>Tanggal Lahir*</td>
             <td>:</td>
             <td>
-              <select name="student_birth_date"
-                id="student_birth_date">
+              <select name="student_birth_date" id="student_birth_date">
                 <?php
                 for ($i = 1; $i <= 31; $i++) {
                   if ($i == $student_birth_date) {
@@ -239,7 +244,7 @@ kuliah pemrograman web di program studi sistem informasi">
                     echo "<option value='$i'>";
                   }
                   echo
-                  str_pad($i, 2, "0", STR_PAD_LEFT);
+                    str_pad($i, 2, "0", STR_PAD_LEFT);
                   echo "</option>";
                 }
                 ?>
@@ -275,11 +280,9 @@ kuliah pemrograman web di program studi sistem informasi">
             <td>Jenis Kelamin*</td>
             <td>:</td>
             <td>
-              <input type="radio" name="student_gender"
-                value="man" id="pria" <?php echo $checked_man ?>><label
+              <input type="radio" name="student_gender" value="man" id="pria" <?php echo $checked_man ?>><label
                 for="pria">Pria</label>
-              <input type="radio" name="student_gender"
-                value="woman" id="wanita" <?php echo $checked_woman ?>><label
+              <input type="radio" name="student_gender" value="woman" id="wanita" <?php echo $checked_woman ?>><label
                 for="wanita">Wanita</label>
             </td>
           </tr>
@@ -287,18 +290,16 @@ kuliah pemrograman web di program studi sistem informasi">
             <td>Upload Foto*</td>
             <td>:</td>
             <td>
-              <input type="file" name="student_photo"
-                id="file_upload" accept="image/*">
-              <input type="hidden" name="MAX_FILE_SIZE"
-                value="1048576">
+              <input type="file" name="student_photo" id="file_upload" accept="image/*">
+              <input type="hidden" name="MAX_FILE_SIZE" value="1048576">
             </td>
           </tr>
           <tr>
             <td>URL Website*</td>
             <td>:</td>
             <td>
-              <input type="url" name="student_website"
-                value="<?= $student_website ?>" size="40" placeholder="URL Website Anda">
+              <input type="url" name="student_website" value="<?= $student_website ?>" size="40"
+                placeholder="URL Website Anda">
             </td>
           </tr>
         </table>
@@ -310,27 +311,26 @@ kuliah pemrograman web di program studi sistem informasi">
           <tr>
             <td>Email*</td>
             <td>:</td>
-            <td><input type="email" name="student_email"
-                value="<?= $student_email ?>" size="20" placeholder="Email Anda"></td>
+            <td><input type="email" name="student_email" value="<?= $student_email ?>" size="20"
+                placeholder="Email Anda"></td>
           </tr>
           <tr>
             <td>Username*</td>
             <td>:</td>
-            <td><input type="text" name="student_username"
-                value="<?= $student_username ?>" size="20" placeholder="Username Anda"></td>
+            <td><input type="text" name="student_username" value="<?= $student_username ?>" size="20"
+                placeholder="Username Anda"></td>
           </tr>
           <tr>
             <td>Password*</td>
             <td>:</td>
-            <td><input type="password"
-                name="student_password" value="<?= $student_password ?>" size="20"
+            <td><input type="password" name="student_password" value="<?= $student_password ?>" size="20"
                 placeholder="Password Anda"></td>
           </tr>
           <tr>
             <td>Konfirmasi Password*</td>
             <td>:</td>
-            <td><input type="password"
-                name="student_password_confirmation" value="<?= $student_password_confirmation ?>" size="20" placeholder="Password Anda"></td>
+            <td><input type="password" name="student_password_confirmation"
+                value="<?= $student_password_confirmation ?>" size="20" placeholder="Password Anda"></td>
           </tr>
         </table>
       </fieldset>
@@ -340,20 +340,16 @@ kuliah pemrograman web di program studi sistem informasi">
         <table>
           <tr>
             <td>
-              <input type="checkbox"
-                name="student_skill_html" value="html" id="html" <?= $student_skill_html ?>><label for="html">HTML</label>
-              <input type="checkbox"
-                name="student_skill_css" value="css" id="css" <?= $student_skill_css ?>><label for="css">CSS</label>
-              <input type="checkbox"
-                name="student_skill_js" value="javascript" id="javascript" <?= $student_skill_js ?>><label for="javascript">Javascript</label>
-              <input type="checkbox"
-                name="student_skill_php" value="php" id="php" <?= $student_skill_php ?>><label for="php">PHP</label>
-              <input type="checkbox"
-                name="student_skill_mysql" value="mysql" id="mysql" <?= $student_skill_mysql ?>><label for="mysql">MySQL</label>
-              <input type="checkbox"
-                name="student_skill_laravel" value="laravel" id="laravel" <?= $student_skill_laravel ?>><label for="laravel">Laravel</label>
-              <input type="checkbox"
-                name="student_skill_react_native" value="react_native" id="react_native"
+              <input type="checkbox" name="student_skill_html" value="html" id="html" <?= $student_skill_html ?>><label
+                for="html">HTML</label>
+              <input type="checkbox" name="student_skill_css" value="css" id="css" <?= $student_skill_css ?>><label
+                for="css">CSS</label>
+              <input type="checkbox" name="student_skill_js" value="javascript" id="javascript" <?= $student_skill_js ?>><label for="javascript">Javascript</label>
+              <input type="checkbox" name="student_skill_php" value="php" id="php" <?= $student_skill_php ?>><label
+                for="php">PHP</label>
+              <input type="checkbox" name="student_skill_mysql" value="mysql" id="mysql" <?= $student_skill_mysql ?>><label for="mysql">MySQL</label>
+              <input type="checkbox" name="student_skill_laravel" value="laravel" id="laravel" <?= $student_skill_laravel ?>><label for="laravel">Laravel</label>
+              <input type="checkbox" name="student_skill_react_native" value="react_native" id="react_native"
                 <?= $student_skill_react_native ?>><label for="react_native">React
                 Native</label>
             </td>

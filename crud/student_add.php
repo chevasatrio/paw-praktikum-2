@@ -139,17 +139,16 @@ $arr_month = [
         <p>
           <label for="nim">NIM : </label>
           <input type="text" name="nim" id="nim" value="<?php echo
-                                                        $nim ?>" placeholder="Contoh: 12345678"> (8 digit angka)
+            $nim ?>" placeholder="Contoh: 12345678"> (8 digit angka)
         </p>
         <p>
           <label for="name">Nama : </label>
           <input type="text" name="name" id="name" value="<?php echo
-                                                          $name ?>">
+            $name ?>">
         </p>
         <p>
           <label for="birth_city">Tempat Lahir : </label>
-          <input type="text" name="birth_city" id="birth_city"
-            value="<?php echo $birth_city ?>">
+          <input type="text" name="birth_city" id="birth_city" value="<?php echo $birth_city ?>">
         </p>
         <p>
           <label for="birth_date">Tanggal Lahir : </label>
@@ -197,18 +196,18 @@ selected>{$value}</option>";
             <option value="FTIB" <?php echo $select_ftib ?>>FTIB
             </option>
             <option value="FTEIC" <?php echo
-                                  $select_fteic ?>>FTEIC</option>
+              $select_fteic ?>>FTEIC</option>
           </select>
         </p>
         <p>
           <label for="department">Jurusan : </label>
-          <input type="text" name="department" id="department"
-            value="<?php echo $department ?>">
+          <input type="text" name="department" id="department" value="<?php echo $department ?>">
         </p>
         <p>
           <label for="gpa">IPK : </label>
           <input type="text" name="gpa" id="gpa" value="<?php echo
-                                                        $gpa ?>" placeholder="Contoh: 2.75"> (angka desimal dipisah dengan
+            $gpa ?>" placeholder="Contoh: 2.75"> (angka desimal dipisah
+          dengan
           karakter titik ".")
         </p>
       </fieldset>
